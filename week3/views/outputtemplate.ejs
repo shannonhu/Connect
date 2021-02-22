@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>
+            TheWebsite
+        </title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    
+    <body class="body">
+        <marquee class="marquee">Fun Random Things</marquee>
+        <img class="img" src="swgif.gif">      
+        <div class="div1">
+            Not sure what this site is actually about, but that could also be the beauty of it
+        </div>
+        <div class="div2">
+                Since I haven't figured things out, You are welcome to go watch <a href="https://www.youtube.com/">YouTube</a>
+        </div>
+        <div class="div3">
+        Or you can tell me something cool and make my day  <img class="img" src="toast.gif">   
+        </div>
+        <div class="form1">
+        <form method="POST" action="/formdata">
+            <label for="name">Give Your Story a Title</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="color">Pick Your Text Color:</label>
+            <input type="color" id="color" name="color" value="#ff0000">
+            <label for="size">Pick the Text Size(10 to 50):</label>
+            <input type="range" id="size" name="size" min="10" max="50"><br>
+            <label for="data">Share Something Cool:</label><br>
+            <textarea name="data" id="data" cols="30" rows="10"></textarea>
+            <input class="form1" type="submit" name="submit" value="Share"> 
+        </form>
+
+        <div>
+            <form method="GET" action="/search">
+                <input type="text" name="q">
+                <input type="submit" value="search">
+            </form>
+        </div>
+
+        <!-- messages go here -->
+            <% 
+            if (data.length > 0) {
+                for (var i = 0; i < data.length; i++) { 
+        %>
+                    <div id="response1" style="color: <%= data[i].color %>; font-size: <%= data[i].size %>"><a href="/displayrecord?_id<%=data[i]._id %>"><%= data[i].name %></a><br><%= data[i].text %></div>
+        <%        
+             } 
+            } 
+        %>
+             </div>
+    </body>
+</html>
