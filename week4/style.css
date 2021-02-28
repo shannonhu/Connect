@@ -1,0 +1,86 @@
+.body {
+    background-color: rosybrown;
+    }
+
+.marquee {
+    position: static;
+    right:25vw;
+    background-color: rgb(68, 54, 54);
+    color: rgba(248, 192, 39, 0.678);
+    text-shadow: 1px 3px 3px yellow;
+    border: 6px solid orange;
+    width: 50vw;
+    font-size: 90px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+    }
+
+.div1 {
+    position: static;
+    top: 130px;
+    color: rgba(248, 192, 39, 0.678);
+    text-shadow: 1px 3px 3px yellow;
+    font-size: 50px;
+    font-family:'Courier New', Courier, monospace
+    text-align: left;
+}
+.div2 {
+    position: static;
+    top: 130px;
+    color: rgba(250, 139, 49, 0.678);
+    text-shadow: 1px 3px 3px rgb(255, 187, 0);
+    font-size: 50px;
+    font-family:'Courier New', Courier, monospace
+    text-align: left;
+}
+.div3 {
+    position: static;
+    top: 130px;
+    color: rgba(165, 32, 14, 0.678);
+    text-shadow: 1px 3px 3px rgb(228, 99, 40);
+    font-size: 50px;
+    font-family:'Courier New', Courier, monospace
+    text-align: left;
+}
+
+.form1 {
+    position: static;
+    top: 130px;
+    color: rgba(165, 32, 14, 0.678);
+    text-shadow: 1px 3px 3px rgb(228, 99, 40);
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace
+    float: left;
+}
+
+.post1 {
+    position: static;
+    top: 130px;
+    left: 50vw;
+    color: rgba(79, 16, 7, 0.678);
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace
+    text-align: left;
+    /* border-style:solid;
+    border-color:orange; */
+    float: left;
+}
+
+.img {
+    position:static;
+    width:300px;
+    opacity: .7;
+    border-radius:50px;
+    }
+
+#messages {
+    position:static;
+    width:20vw;
+    height:10vw;
+    border-style: solid;
+    border-color: orange;
+    border-width: 6px;
+    background-color: pink;
+    float: left
+    
+}

@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>
+            TheWebsite
+        </title>
+        <link rel="stylesheet" href="style.css" />
+        <script type="text/javascript">
+
+            var messages = null;
+            var submit = null;
+            var text = null;
+            var color = null;
+            var title = null;
+
+            window.addEventListener('load', function() {
+                messages = document.getElementById('messages');
+                submit = document.getElementById('submit');
+                submit.addEventListener('click',sendData);
+                text  = document.getElementById('text');
+                color = document.getElementById('color');
+                title = document.getElementById('title');
+            });
+
+            function sendData() {
+                fetch('/formdata?text='+text.value+'&color='+color.value+'&title='+title.value)
+                .then(response => response.json())
+                .then(data => populateMessages(data));
+            }
+
+            function populateMessages(newmessages) {
+                messages.innerHTML = " ";
+                for(var i = 0; i < newmessages.length; i++) {
+                messages.innerHTML = messages.innerHTML + newmessages[i].text + "<br/>";
+                console.log(newmessages.length);
+                }
+            }
+
+        </script>
+    </head>
+    
+    <body class="body">
+        <marquee class="marquee">Random Fun Things</marquee>
+        <img class="img" src="swgif.gif">      
+        <div class="div1">
+            Not sure what this site is actually about, but that could also be the beauty of it
+        </div>
+        <div class="div2">
+                Since I haven't figured things out, You are welcome to go watch <a href="https://www.youtube.com/">YouTube</a>
+        </div>
+        <div class="div3">
+        Or you can tell me something cool and make my day  <img class="img" src="toast.gif">   
+        </div>
+        <div class="form1">
+        <form>
+            <label for="name">Give Your Story a Title</label><br>
+            <input id ="title" type="text" name="name"><br>
+            <label for="color">Pick Your Text Color:</label>
+            <input id ="color" type="color" name="color" value="#ff0000"><br>
+            <label for="data">Share Something Cool:</label><br>
+            <textarea id ="text" name="data" cols="30" rows="10"></textarea>
+            <input id="submit" class="form1" type="button" name="submit" value="Share"> 
+        </form>
+
+    <div id="messages" class="form1">
+            Posts
+    </div>
+    </body>
+</html>
