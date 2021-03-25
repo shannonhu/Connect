@@ -1,0 +1,95 @@
+<html>
+    <header>
+        <title>Circles-ColorMe</title>
+        <style>
+            body {
+                background-color: white;
+                color:black;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            #header {
+                width: 100vw;
+                height: 50px;
+                position:fixed;
+                top:0%;
+                left:0%;
+            }
+            #login {
+                position:fixed;
+                top: 30;
+                left: 92vw;
+                font-size: 20px;
+                color:black;
+            }
+            #login:active {
+                color: black;
+            }
+            .circles{
+                position:absolute;
+                animation-name: drop;
+                animation-duration: 3s;
+                animation-iteration-count: 1;
+                animation-timing-function: ease-in-out;
+                animation-fill-mode: forwards;
+            }
+            @keyframes drop {0% {top:-400px;} 75% {top:500px;} 90% {top:420px;} 100% {top:440px;}};
+        </style>
+
+        <script type="text/javascript">
+        window.onload = function() {
+        <% if (data.length > 0) {
+            for (var i = 0; i < data.length; i++) {
+        %>
+                var node = document.getElementById("text<%= data[i]._id %>");
+                document.getElementById("blogs<%= data[i]._id %>").onmouseover = function() {show()};
+                document.getElementById("blogs<%= data[i]._id %>").onmouseout = function() {hide()};
+                function show() {
+                    node.innerHTML = "<%= data[i].content %>(<%= data[i].location %>)";
+                    }
+                function hide() {
+                    node.innerHTML = "";
+                    }
+        <%
+            }
+        }
+        %>
+    }
+        </script>
+    </header>
+
+    <body>
+        <% 
+        if (data.length > 0) {
+            for (var i = 0; i < data.length; i++) {
+                data[i].rgb= (data[i].length*3)%256;
+                data[i].time= data[i].time%256;
+                data[i].date= data[i].date%256;
+                data[i].dis= data[i].length*10;
+                data[i].distext= data[i].length*2;
+
+    %>                
+                <svg class="circles" id="circles<%= data[i]._id %>" height="100vw" width="100vw" 
+                style="position:absolute; left:<%= data[i].dis%>px; top:<%= data[i].length %>*3px;">
+                    <circle id="blogs<%= data[i]._id %>" cx="<%= data[i].length %>" cy="<%= data[i].length %>" 
+                        r="<%= data[i].length%>" 
+                        style="fill:rgb(<%= data[i].time %>,<%= data[i].rgb %>,<%= data[i].date %>);"
+                         />
+                         <text id="text<%= data[i]._id %>" fill="black" font-size="20px"
+                         x="<%= data[i].distext %>" y="<%= data[i].length %>" style="font-weight: bold;"></text>    
+
+                </svg>
+    <%        
+         } 
+        } 
+    %>
+
+    <div id=header>
+        <svg height="10vw" width="100vw">
+            <a href="index.html"><circle cx="80vw" cy="40" r="20" style="fill:black"/></a>
+            <a href="/formdata"><circle cx="85vw" cy="40" r="20" style="fill:rgb(85, 85, 85)"/></a>
+            <a href="login.html"><circle cx="90vw" cy="40" r="20" style="fill:rgb(131, 131, 131)"/></a>
+            <a href="/logout"><circle cx="95vw" cy="40" r="20" style="fill:rgb(187, 187, 187)"/></a>
+        </svg>
+        </div>
+    </body>
+</html>

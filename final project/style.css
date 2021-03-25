@@ -1,0 +1,90 @@
+body {
+    background-color: white;
+    color:black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#header {
+  width: 100vw;
+  height: 50px;
+  position:fixed;
+  top:0%;
+  left:0%;
+}
+
+#login {
+  position:fixed;
+  top: 30;
+  left: 92vw;
+  font-size: 20px;
+  color: black;
+}
+
+.title {
+    border-right: solid 3px black;
+    margin: 5px auto; 
+    white-space: nowrap;
+    overflow: hidden;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    cursor:pointer;
+}
+
+/* Animation */
+#title-big {
+  animation: animated-text 4s steps(29,end) 1s 1 normal both,
+             animated-cursor 600ms steps(29,end) 4.5s 1 normal both;
+}
+#title-medium, #title-medium2 {
+  animation: animated-text2 4s steps(29,end) 1s 1 normal both,
+             animated-cursor2 600ms steps(29,end) 4.5s 1 normal both;
+}
+/* text animation */
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 600px;}
+}
+@keyframes animated-text2{
+  from{width: 0;}
+  to{width: 220px;}
+}
+/* cursor animations */
+@keyframes animated-cursor{
+  from{border-right-color:black;}
+  to{border-right-color: transparent;}
+}
+@keyframes animated-cursor2{
+  from{border-right-color:black;}
+  to{border-right-color: transparent;}
+}
+
+#title-big {font-size:50px; margin-top:10vw;}
+#title-meidum {font-size:20px; top:10vw;}
+#title-meidum2 {font-size:20px;}
+
+#form-main{display:none;margin:20px auto;width:50%;font-size:30px;text-align: center;}
+input[type=text],input[type=datetime],textarea{
+    padding: 10px 10px;
+    margin: 5px;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+  input[type=text]:focus{border: 3px solid black;}  
+  input[type=datetime]:focus{border: 3px solid black;}  
+  textarea:focus{border: 3px solid black;}
+  input[type=submit] {
+      background-color: black;
+      border:none;
+      border-radius:20px;
+      padding:10px;
+      margin:10px 150px;
+      width:30%;
+      height:10%;
+      color:white;
+      font-family:'Courier New', Courier, monospace; 
+      font-size: 30px;
+      cursor: pointer;
+  }

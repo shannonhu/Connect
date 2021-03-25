@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>ColorMe</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="animation.js"></script>
+        <style>
+            
+        </style>
+    </head>
+
+    <body>
+        <div id=header>
+            <svg height="10vw" width="100vw">
+                <a href="index.html"><circle cx="80vw" cy="40" r="20" style="fill:black"/></a>
+                <a href="/formdata"><circle cx="85vw" cy="40" r="20" style="fill:rgb(85, 85, 85)"/></a>
+                <a href="login.html"><circle cx="90vw" cy="40" r="20" style="fill:rgb(131, 131, 131)"/></a>
+                <a href="/logout"><circle cx="95vw" cy="40" r="20" style="fill:rgb(187, 187, 187)"/></a>
+            </svg>
+        </div>
+
+        <div class=title id=title-big>Color Your Memories</div>
+        <div class=title id=title-medium>A space solely for you</div>
+        <div class=title id=title-medium2>Take your time to type</div>
+
+        <div class=form id=form-main >
+            <form method="POST" action="/formdata">
+            <label for="time">When:</label>
+            <input id=time name="time" type="date" ><br>
+            <label for="location">Where:</label>
+            <input id=location name="location" type="text" ><br>
+            <label for="content">What's on Your Mind:</label><br>
+            <textarea id=content name="content" cols="60" rows="10" maxlength="1500"></textarea><br>
+            <input id=submit  name="submit" type="submit" value="Color"> 
+            </form>
+        </div>
+    </body>
+</html>

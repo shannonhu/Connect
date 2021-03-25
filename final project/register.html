@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Register</title>
+        <style>
+            body{
+                background-color: white;
+                color:black;
+                font-family: 'Courier New', Courier, monospace;
+                margin:auto;
+                width:50%;
+            }
+            #header {
+                width: 100vw;
+                height: 50px;
+                position:fixed;
+                top:0%;
+                left:0%;
+            }
+            #login {
+                position:fixed;
+                top: 30;
+                left: 92vw;
+                font-size: 20px;
+                color:black;
+            }
+            #login:active {
+                color: black;
+            }
+            #title-register{
+                margin-top:15vw;
+                margin-bottom: 20px;;
+                font-size: 50px;
+                text-align: center;
+            }
+            #form-register{font-size:30px;text-align: center;}
+            input[type=text],input[type=password],textarea{
+                padding: 10px 10px;
+                margin: 5px;
+                border: 3px solid #ccc;
+                -webkit-transition: 0.5s;
+                transition: 0.5s;
+                outline: none;
+                }
+            input[type=text]:focus{border: 3px solid black;}  
+            input[type=password]:focus{border: 3px solid black;}  
+            textarea:focus{border: 3px solid black;}
+            input[type=submit] {
+                background-color: black;
+                border:none;
+                border-radius:20px;
+                padding:10px;
+                margin:20px 250px;
+                width:30%;
+                height:10%;
+                color:white;
+                font-family:'Courier New', Courier, monospace; 
+                font-size: 30px;
+                cursor: pointer;
+  }
+        </style>
+    </head>
+  <body>
+    <div id=header>
+        <svg height="10vw" width="100vw">
+            <a href="index.html"><circle cx="80vw" cy="40" r="20" style="fill:black"/></a>
+            <a href="/formdata"><circle cx="85vw" cy="40" r="20" style="fill:rgb(85, 85, 85)"/></a>
+            <a href="login.html"><circle cx="90vw" cy="40" r="20" style="fill:rgb(131, 131, 131)"/></a>
+            <a href="/logout"><circle cx="95vw" cy="40" r="20" style="fill:rgb(187, 187, 187)"/></a>
+        </svg>
+        </div>
+    <div id=title-register>Register</div>
+	<form id=form-register action="/register" method="POST">
+		Choose Username: <input type="text" name="username"><br />
+		Choose Password: <input type="password" name="password"><br />
+		<input type="submit" name="submit" value="Register"><br />
+	</form>		
+  </body>
+</html>
